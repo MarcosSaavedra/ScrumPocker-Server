@@ -11,13 +11,13 @@ userCtrl.getUsers  = async (req,res) => {
     res.send('createUser')
  }
  userCtrl.getUser  = (req,res) => {
-    res.send('get employee')
+    res.send('get user')
  }
  userCtrl.updateUser  = (req,res) => {
-    res.send('update employee')
+    res.send('update user')
  }
  userCtrl.deleteUser  = (req,res) => {
-    res.send('delete employee')
+    res.send('delete user')
  }
 
 module.exports =  userCtrl;
