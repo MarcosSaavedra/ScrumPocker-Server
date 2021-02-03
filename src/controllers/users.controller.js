@@ -19,5 +19,5 @@ userCtrl.getUsers  = async (req,res) => {
  userCtrl.deleteUser  = (req,res) => {
     res.send('delete user')
  }
-
+ 
 module.exports =  userCtrl;
