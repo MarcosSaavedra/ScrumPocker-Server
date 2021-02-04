@@ -10,14 +10,17 @@ userCtrl.getUsers  = async (req,res) => {
     await newUser.save()
     res.send('createUser')
  }
- userCtrl.getUser  = (req,res) => {
-    res.send('get user')
+ userCtrl.getUser  =async (req,res) => {
+   const userFound = await userModel.findById(req.params.id)
+   res.send(userFound); 
  }
- userCtrl.updateUser  = (req,res) => {
-    res.send('update user')
+ userCtrl.updateUser  =async (req,res) => {
+   await userModel.findByIdAndUpdate(req.params.id , req.body)
+   res.json({status: 'user updated'})
  }
- userCtrl.deleteUser  = (req,res) => {
-    res.send('delete user')
+ userCtrl.deleteUser  =async (req,res) => {
+   const userDeleted = await userModel.findByIdAndDelete(req.params.id)
+
  }
  
 module.exports =  userCtrl;

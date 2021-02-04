@@ -7,7 +7,7 @@ POST  http://localhost:8000/api/users
 Content-Type: application/json
 
 {
-    "name" : "marcos" , 
+    "name" : "Bart" , 
     "votation" : true , 
-    "score" : 15
+    "score" : 10
 }
