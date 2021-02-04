@@ -11,3 +11,15 @@ Content-Type: application/json
     "votation" : true , 
     "score" : 10
 }
+###
+GET   http://localhost:8000/api/room
+
+###
+POST  http://localhost:8000/api/room
+Content-Type: application/json
+
+{
+    "name" : "FirstRoom" , 
+    "users" : 3 , 
+    "active" : true
+}
