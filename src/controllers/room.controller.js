@@ -8,7 +8,7 @@ roomCtrl.getRooms  = async (req,res) => {
  roomCtrl.createRoom  =async (req,res) => {
     const newRoom = new roomModel(req.body)
     await newRoom.save()
-    res.send('createUser')
+    res.send(newRoom)
  }
  roomCtrl.getRoom  =async (req,res) => {
    const roomFound = await roomModel.findById(req.params.id)

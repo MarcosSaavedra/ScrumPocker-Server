@@ -1,8 +1,9 @@
 const {Schema, model }= require('mongoose') ;
 
 const roomSchema = new Schema({
-    name: {type: String , required: true} , 
-    users: {type: Number , required: true} , 
+    codeRoom: {type: Number , required: true} , 
+    userAdmin: {type: String , required: true} , 
+    typeOfRoom: {type:String , required: true } , 
     active: {type: Boolean , required: true} 
 } , {
     timestamps: true ,

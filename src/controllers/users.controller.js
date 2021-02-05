@@ -7,8 +7,8 @@ userCtrl.getUsers  = async (req,res) => {
  }
  userCtrl.createUser  =async (req,res) => {
     const newUser = new userModel(req.body)
-    await newUser.save()
-    res.send('createUser')
+    const test = await newUser.save()
+    res.send(test)
  }
  userCtrl.getUser  =async (req,res) => {
    const userFound = await userModel.findById(req.params.id)
