@@ -11,7 +11,8 @@ userCtrl.getUsers  = async (req,res) => {
     res.send(test)
  }
  userCtrl.getUser  =async (req,res) => {
-   const userFound = await userModel.findById(req.params.id)
+   const userFound = await userModel.find({ '_id' : req.params.id})
+   console.log(userFound);
    res.send(userFound); 
  }
  userCtrl.updateUser  =async (req,res) => {
@@ -19,8 +20,23 @@ userCtrl.getUsers  = async (req,res) => {
    res.send(userUpdated)
  }
  userCtrl.deleteUser  =async (req,res) => {
-   const userDeleted = await userModel.findByIdAndDelete(req.params.id)
-
+    await userModel.findByIdAndDelete(req.params.id)
+   res.json({ status: "Employee Deleted" });
  }
+
+ userCtrl.cleanResults = async (req,res) => {
+ // const blable = await userModel.find( {'room' : "1234"}) ;
+  let blable = await userModel.find({'room' :req.body.room}) ;
+  console.log(blable);
+  blable.forEach(element => {
+    element.score = 0 ; 
+    element.votation = false ;
+    element.save()
+  });
+  
+
+ 
+  res.json(blable)
+}
  
 module.exports =  userCtrl;

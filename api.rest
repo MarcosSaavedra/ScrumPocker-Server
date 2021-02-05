@@ -1,7 +1,15 @@
+###s
+GET   http://localhost:8000/api/users/601d99a921caec28d085a2d9
+
 ###
-GET   http://localhost:8000/api/users
+POST    http://localhost:8000/api/users/clean
+Content-Type: application/json
 
-
+{
+    "room" : "1234" , 
+    "votation" : true , 
+    "score" : 10
+}
 ###
 POST  http://localhost:8000/api/users
 Content-Type: application/json
@@ -13,6 +21,9 @@ Content-Type: application/json
 }
 ###
 GET   http://localhost:8000/api/room
+###
+GET   http://localhost:8000/api/room/occupied
+
 
 ###
 POST  http://localhost:8000/api/room
