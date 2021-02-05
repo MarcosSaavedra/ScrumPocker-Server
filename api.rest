@@ -40,3 +40,7 @@ GET   http://localhost:8000/api/system
 
 ###
 GET   http://localhost:8000/api/system/Fibonacci
+
+###
+GET   http://localhost:8000/api/room/5400
+

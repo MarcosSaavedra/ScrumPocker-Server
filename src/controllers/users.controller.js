@@ -2,7 +2,7 @@ const userCtrl = {}
 
 const userModel  = require ('../models/User')
 userCtrl.getUsers  = async (req,res) => {
-    const users = await userModel.find() 
+    const users = await userModel.find( {'room' : req.params.room}) ;
     res.json (users)
  }
  userCtrl.createUser  =async (req,res) => {
@@ -15,8 +15,8 @@ userCtrl.getUsers  = async (req,res) => {
    res.send(userFound); 
  }
  userCtrl.updateUser  =async (req,res) => {
-   await userModel.findByIdAndUpdate(req.params.id , req.body)
-   res.json({status: 'user updated'})
+   const userUpdated  = await userModel.findByIdAndUpdate(req.params.id , req.body)
+   res.send(userUpdated)
  }
  userCtrl.deleteUser  =async (req,res) => {
    const userDeleted = await userModel.findByIdAndDelete(req.params.id)

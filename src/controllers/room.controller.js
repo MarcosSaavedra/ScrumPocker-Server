@@ -11,8 +11,8 @@ roomCtrl.getRooms  = async (req,res) => {
     res.send(newRoom)
  }
  roomCtrl.getRoom  =async (req,res) => {
-   const roomFound = await roomModel.findById(req.params.id)
-   res.send(roomFound); 
+   const roomFound = await roomModel.find({codeRoom : req.params.name})
+   res.send(roomFound[0]); 
  }
  
  roomCtrl.deleteRoom  =async (req,res) => {

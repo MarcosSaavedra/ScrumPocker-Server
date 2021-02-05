@@ -12,9 +12,10 @@ votingSystemCtrl.getVotingSystems  = async (req,res) => {
  }
  votingSystemCtrl.getVotingSystem  =async (req,res) => {
     var nameOfSystem = req.params.name ;
-   const VotingSystemFound = await votingSystemModel.find({name :nameOfSystem} )
+   const VotingSystemFound = await votingSystemModel.findOne({'name' :nameOfSystem} )
    res.send(VotingSystemFound); 
  }
+ 
  
  
 module.exports =  votingSystemCtrl;
